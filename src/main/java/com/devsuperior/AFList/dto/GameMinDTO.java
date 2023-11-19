@@ -1,6 +1,7 @@
 package com.devsuperior.AFList.dto;
 
 import com.devsuperior.AFList.entidades.Game;
+import com.devsuperior.AFList.projections.GameMinProjection;
 
 public class GameMinDTO {
 	private long id;
@@ -17,6 +18,14 @@ public class GameMinDTO {
 		ano = Entity.getAno();
 		imgUrl = Entity.getImgUrl();
 		descricaoCurta = Entity.getDescricaoCurta();
+	}
+	
+	public GameMinDTO(GameMinProjection projection) {
+		id = projection.getId();
+		titulo = projection.getTitulo();
+		ano = projection.getAno();
+		imgUrl = projection.getImgUrl();
+		descricaoCurta = projection.getDescricaoCurta();
 	}
 
 	public long getId() {
